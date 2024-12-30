@@ -1,0 +1,538 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #4891ff;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+}
+
+body {
+    background-image: url(/images/7B92A946-5B17-4541-83E8-83FF04B8F1BA.jpg);
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Potta+One', sans-serif; */
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: white;
+}
+
+/* Base styles */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgb(225, 225, 64);
+    padding: 1rem;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar .logo img {
+    width: 80px;
+    height: auto;
+}
+
+.navbar .main-menu ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.15rem;
+}
+
+.navbar ul li a {
+    padding: 0.4rem 0.5rem;
+    display: block;
+    /* 加深字體粗細 */
+    font-weight: 800;
+    transition: 0.5s;
+}
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Dropdown */
+.main-menu .li a{
+    margin-bottom: 5px;
+    padding: 100px;
+}
+.dropbtn {
+    border: none;
+    /* border-top: 3px solid ; */
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background-color: rgb(225, 225, 64);
+    color: #000;
+    /* 加深字體粗細 */
+    font-weight: 800;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    font-weight: 600;
+    position: absolute;
+    background-color: rgb(225, 225, 64);
+    margin-top: 1px;
+    font-size: large;
+    padding: 7.5px 0.5px;
+    min-width: 140px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+.dropbtn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; /* 先设置到左边的 50% */
+    transform: translateX(-50%); /* 使用 transform 将元素居中 */
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+    display: inline-block;
+    border-top: 1px solid black;
+    transition: 0.3s;
+}
+.dropdown-content a {
+    color: black;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    display: block;
+}
+
+.dropdown-content a::before{
+    content: '';
+    left: 50%; /* 先设置到左边的 50% */
+    transform: translateX(-50%); /* 使用 transform 将元素居中 */
+    position: absolute;
+    top: -1px;
+    width: 65%;
+    display: block;
+    margin-bottom: 200px;
+    border-top: 3px solid ;
+}
+.dropdown-content a:hover{
+    background-color: rgb(225, 225, 64);
+    border: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover {
+    .dropbtn {color: var(--primary-color);}
+}
+.dropdown:hover .dropbtn::before {
+    border-top-width: 5px;
+    border-color: var(--primary-color);
+}
+.dropdown-content a:hover::before {
+    border-top-width: 5px;
+    color: var(--primary-color);
+}
+/* Hero Section */
+.hero {
+    margin-bottom: 3rem;
+}
+
+.hero .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 300px;
+}
+
+.hero-heading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero .hero-text {
+    width: 90%;
+    max-width: 500px;
+    padding: 1rem;
+    margin: 1.25rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: clamp(1.5rem, 7vw, 1.5rem);
+    font-weight: 1000;
+    background-color: purple;
+    text-align: center;
+}
+
+.hero .date {
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    width: 90%;
+    max-width: 500px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1.5rem, 7vw, 1.5rem);
+    align-items: center;
+    margin: 0 auto;
+    color: #000;
+}
+
+/* Idea Section */
+.idea {
+    width: 90%;
+    max-width: 800px;
+    margin: 4rem auto;  /* 從 2rem 改為 4rem */
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: rgb(84, 1, 84);
+    border-radius: 50px;
+    color: #fff;
+    margin-bottom:20rem;  /* 從 4rem 改為 6rem */
+}
+.idea p {
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.idea p:nth-child(1) {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    padding-top: 1.25rem;
+    font-weight: 600;
+    text-shadow: 2px 2px rgb(170, 3, 170);
+    color: rgb(225, 225, 64);
+}
+
+.idea p:nth-child(2) {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    padding: 1.5rem 1rem;
+}
+
+/* Presum Section */
+.presum {
+    width: 90%;
+    max-width: 800px;
+    margin: 4rem auto;  /* 從 2rem 改為 4rem */
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: rgb(84, 1, 84);
+    border-radius: 50px;
+    color: #fff;
+    margin-bottom: 20rem;  /* 從 4rem 改為 6rem */
+}
+
+.presum p {
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.presum p:nth-child(1) {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    padding-top: 1.25rem;
+    font-weight: 600;
+    text-shadow: 2px 2px rgb(170, 3, 170);
+    color: rgb(225, 225, 64);
+}
+
+.presum p:nth-child(2) {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    padding: 1.5rem 1rem;
+    text-align: justify;
+}
+
+/* Timetable Section */
+.timetable {
+    width: 90%;
+    max-width: 800px;
+    margin: 4rem auto;  /* 從 2rem 改為 4rem */
+    padding: 2rem 1rem;
+    background-color: rgb(84, 1, 84);
+    border-radius: 50px;
+    color: #fff;
+    margin-bottom: 20rem;  /* 從 5rem 改為 6rem */
+}
+
+.timetable p, .timetable h2, .timetable h1 {
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.timetable .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.timetable h1 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 600;
+    text-shadow: 2px 2px rgb(170, 3, 170);
+    color: rgb(225, 225, 64);
+    padding: 1rem 0;
+}
+
+.timetable .present {
+    flex: 1;
+    min-width: 300px;
+}
+
+.timetable .present h2 {
+    font-size: 1rem;
+    color: beige;
+    margin-bottom: 0.5rem;
+}
+
+.timetable .present .p1 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    color: rgb(225, 225, 64);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timetable .present .p2 {
+    display: inline-block;
+    width: auto;
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: rgb(225, 225, 64);
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.gif-container {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.gif-container img {
+    width: 300%;
+    max-width: 300px;
+    height: 80%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background-color: rgb(225, 225, 64);
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-dark {
+    background-color: rgb(225, 225, 64);
+    color: #000;
+}
+
+.text-xxl {
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    font-size: clamp(13rem, 9vw, 5rem);
+    line-height: 1.2;
+    color: rgb(225, 225, 64);
+    text-align: center;
+    font-weight: 600;
+    text-shadow:4px 4px #4891ff;
+    margin: 15rem 0 4rem 0;
+}
+/* chart */
+th,td{
+    border: 1px solid #000;
+    padding-top: 0.32em;
+    padding-bottom: 0.32em;
+}
+table{
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th{
+    padding-left:8em ;
+    padding-right:8em ;
+}
+td{
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+tr:not(:first-child):nth-child(odd){
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #ddd;
+}
+tr:not(:first-child):nth-child(even){
+    background-color: #fff;
+}
+.perform .word{
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1em;
+    color: #cccf31;
+    text-shadow: 0.5px 0.5px #1195ed;
+}
+.chart-title{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em; 
+    font-weight: 700;
+    color: #cccf31;
+    font-size: 1.5rem;
+    background-color: gray;
+}
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar .main-menu ul {
+        justify-content: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    .timetable .present h2 {
+        padding-left: 0;
+    }
+
+    .timetable .present .p1,
+    .timetable .present .p2 {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* Animation */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* search */
+.search_container{
+    height: 100vh; /* 讓高度充滿整個視窗 */
+    display: flex;
+    justify-content: center;
+}
+.search{
+    width: 70em;
+    display:flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 28px;
+    background-color: #f6f6f6;
+    transition: box-shadow 0.25s;
+}
+.search_input{
+    font-size: 16px;
+    color: #333;
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 300px;
+}
+.search:focus-within{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+.search_input::placeholder,
+.search_icon{
+    color: rgba(0, 0, 0, 0.5);
+}

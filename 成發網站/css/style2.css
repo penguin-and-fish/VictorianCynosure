@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #4891ff;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+}
+.search_container{
+    height: 100vh; /* 讓高度充滿整個視窗 */
+    display: flex;
+    justify-content: center;
+}
+.search{
+    width: 70em;
+    display:flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 28px;
+    background-color: #f6f6f6;
+    transition: box-shadow 0.25s;
+}
+.search_input{
+    font-size: 16px;
+    color: #333;
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 300px;
+}
+.search:focus-within{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+.search_input::placeholder,
+.search_icon{
+    color: rgba(0, 0, 0, 0.5);
+}
+/* 默認狀態暫停動畫 */
+.lottie-container dotlottie-player {
+    pointer-events: none;
+}
+
+/* Hover 播放動畫 */
+.lottie-container:hover dotlottie-player {
+    pointer-events: auto;
+    animation-play-state: running;
+}
